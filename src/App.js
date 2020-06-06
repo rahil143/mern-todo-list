@@ -15,7 +15,26 @@ class  App extends Component {
     return (
       <Router>
         <div className="container">
-          <h2>MERN-Stack Todo App</h2>
+          <nav className="navbar navbar-expand-lg navbar-light bg-light">
+          <a className="navbar-brand" href="https://codingthesmartway.com" target="_blank">
+            <img src={logo} width="30" height="30" alt="CodingTheSmartWay.com" />
+          </a>
+          <Link to="/" className="navbar-brand">MERN-STACK Todo APP</Link>
+          <div className="collapse navbar-collapse">
+            <ul className="navbar-nav mr-auto">
+              <li>
+                <Link to="/" className="nav-link">Todos</Link>
+              </li>
+              <li>
+                <Link to="/create" className="nav-link">Create Todo</Link>
+              </li>
+            </ul>
+          </div>
+          </nav>
+          <br/>
+          <Route path="/" exact component={TodoList}></Route>
+          <Route path="/edit/:id" exact component={EditTodo}></Route>
+          <Route path="/create" exact component={CreateTodo}></Route>
         </div>
       </Router>
     );
